@@ -1,35 +1,54 @@
-import socket
-import struct
-import textwrap
+# ==============================================================================
+#          ANÁLISIS DE TRÁFICO: ESCUCHANDO LOS SUSURROS DEL CABLE
+# ==============================================================================
+#
+# ANALOGÍA: Imagina que puedes interceptar todas las cartas que pasan por 
+# la oficina de correos y leer lo que dicen. 
+#
+# En redes, esto se llama "Sniffing". Si los datos no están cifrados (como 
+# una postal), puedes leerlo todo. Si están cifrados (como una caja fuerte),
+# solo verás ruido.
+#
+# Este script de ejemplo usa la librería 'scapy' para "espiar" paquetes.
+# ---
 
-# Analizador de paquetes simple en Python (Solo para Linux/Raw Sockets)
-# Este script muestra cómo capturar y desempaquetar encabezados Ethernet.
+import sys
 
-def main():
-    # Solo funciona en sistemas con soporte de RAW sockets (Linux principalmente)
-    try:
-        conn = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(3))
-    except AttributeError:
-        print("Error: Los sockets AF_PACKET solo están disponibles en Linux.")
-        return
+# Intentamos importar scapy, la herramienta favorita de los analistas de red
+try:
+    from scapy.all import sniff
+except ImportError:
+    print("Para ejecutar este detective necesitas instalar scapy: pip install scapy")
+    sys.exit()
 
-    print("--- Capturando tráfico de red (Ethernet Frames) ---")
+def analizar_paquete(paquete):
+    """
+    Esta función actúa como el detective que abre el sobre.
+    """
+    # Miramos si el paquete tiene una capa de Red (IP)
+    if paquete.haslayer('IP'):
+        origen = paquete['IP'].src
+        destino = paquete['IP'].dst
+        
+        # Analogía: Leemos el remitente y el destinatario del sobre.
+        print(f"📦 Paquete detectado: De {origen} hacia {destino}")
+        
+        # Si es un correo (TCP), miramos qué tipo de servicio es
+        if paquete.haslayer('TCP'):
+            puerto = paquete['TCP'].dport
+            print(f"   ∟ Tipo de conversación (Puerto): {puerto}")
 
-    while True:
-        raw_data, addr = conn.recvfrom(65536)
-        dest_mac, src_mac, eth_proto, data = ethernet_frame(raw_data)
-        print(f'\nEthernet Frame:')
-        print(f'  Destino: {dest_mac}, Origen: {src_mac}, Protocolo: {eth_proto}')
+print("🕵️  Detective de Red activado... Escuchando el tráfico (presiona Ctrl+C para parar)")
 
-# Desempaquetar Ethernet Frame
-def ethernet_frame(data):
-    dest_mac, src_mac, proto = struct.unpack('! 6s 6s H', data[:14])
-    return get_mac_addr(dest_mac), get_mac_addr(src_mac), socket.htons(proto), data[14:]
+# Empezamos a escuchar. 
+# count=5 significa que solo miraremos los primeros 5 sobres que pasen.
+# sniff(prn=analizar_paquete, count=5)
 
-# Formatear dirección MAC (AA:BB:CC:DD:EE:FF)
-def get_mac_addr(bytes_addr):
-    bytes_str = map('{:02x}'.format, bytes_addr)
-    return ':'.join(bytes_str).upper()
-
-if __name__ == "__main__":
-    main()
+print("---")
+print("TABLA DE PROTOCOLOS COMUNES QUE EL DETECTIVE BUSCA:")
+print("| Puerto | Protocolo | ¿Es seguro? | Analogía |")
+print("|--------|-----------|-------------|----------|")
+print("| 80     | HTTP      | NO          | Una postal abierta |")
+| 443    | HTTPS     | SÍ          | Una caja fuerte blindada |")
+| 21     | FTP       | NO          | Enviar archivos en bolsa transparente |")
+print("---")

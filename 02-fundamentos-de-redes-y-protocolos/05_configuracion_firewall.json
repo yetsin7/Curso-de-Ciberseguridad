@@ -1,39 +1,35 @@
 {
-  "firewall_rules": {
-    "default_policy": {
-      "incoming": "DROP",
-      "outgoing": "ALLOW",
-      "forwarding": "DROP"
+  "titulo": "Configuración del Firewall: El Guardia de la Discoteca",
+  "descripcion": "Un firewall es como el guardia que está en la puerta de una discoteca con una lista de invitados (Reglas). Si no estás en la lista, no entras.",
+  "reglas_del_guardia": [
+    {
+      "accion": "PERMITIR",
+      "puerto": 443,
+      "quien": "Todo el mundo",
+      "analogia": "Dejar entrar a cualquiera que venga vestido formal (HTTPS) para ver la web.",
+      "por_que": "Es el tráfico seguro de internet."
     },
-    "allowed_services": [
-      {
-        "service": "SSH",
-        "port": 22,
-        "protocol": "TCP",
-        "source": "192.168.1.0/24",
-        "action": "ACCEPT",
-        "description": "Permitir SSH solo desde la red interna de administración"
-      },
-      {
-        "service": "HTTPS",
-        "port": 443,
-        "protocol": "TCP",
-        "source": "ANY",
-        "action": "ACCEPT",
-        "description": "Permitir tráfico web seguro desde cualquier origen"
-      },
-      {
-        "service": "DNS",
-        "port": 53,
-        "protocol": "UDP",
-        "source": "ANY",
-        "action": "ACCEPT",
-        "description": "Permitir consultas DNS"
-      }
-    ],
-    "blocked_ips": [
-      "10.0.0.50",
-      "192.168.1.200"
-    ]
-  }
+    {
+      "accion": "BLOQUEAR",
+      "puerto": 21,
+      "quien": "Todo el mundo",
+      "analogia": "No dejar entrar a nadie con maletas grandes (FTP) por la puerta principal.",
+      "por_que": "El protocolo FTP es antiguo y poco seguro."
+    },
+    {
+      "accion": "PERMITIR",
+      "puerto": 22,
+      "quien": "Solo el administrador (IP 10.0.0.5)",
+      "analogia": "Solo el dueño del local puede entrar por la puerta trasera (SSH).",
+      "por_que": "SSH permite controlar la computadora a distancia, es muy peligroso si lo usa cualquiera."
+    },
+    {
+      "accion": "BLOQUEAR_POR_DEFECTO",
+      "puerto": "Todos los demás",
+      "quien": "Cualquiera",
+      "analogia": "Si no te conozco y no estás en mi lista, la puerta está cerrada.",
+      "por_que": "En ciberseguridad, lo que no está permitido explícitamente, debe estar prohibido."
+    }
+  ],
+  "consejo_experto": "Un firewall no es invencible. Si un hacker engaña al guardia (Social Engineering) o entra por un túnel secreto (Vulnerabilidad), el firewall no servirá de nada."
 }

@@ -1,5 +1,0 @@
-Vulnerabilidad: Una debilidad en el sistema que puede ser explotada.
-Amenaza: Un evento potencial que puede causar daño.
-Riesgo: La probabilidad de que una amenaza explote una vulnerabilidad.
-Exploit: El medio (software o técnica) usado para aprovechar la vulnerabilidad.
-Payload: La acción que realiza el exploit una vez que ha tenido éxito.

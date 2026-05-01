@@ -1,27 +1,43 @@
 #!/bin/bash
 
-# Automatización de escaneo básico con Nmap
-# Uso: ./03_escaneo_nmap.sh <IP>
+# ==============================================================================
+#           NMAP: EL DETECTIVE QUE TOCA TODAS LAS PUERTAS
+# ==============================================================================
+#
+# ANALOGÍA: Imagina que eres un detective y llegas a una calle con 100 casas.
+# Quieres saber cuáles están habitadas, cuáles tienen la puerta abierta y
+# cuáles tienen perro guardián (firewall).
+#
+# Nmap (Network Mapper) hace exactamente eso pero con computadoras y puertos.
+#
+# ---
 
-TARGET=$1
+echo "--- INICIANDO ESCANEO EDUCATIVO CON NMAP ---"
 
-if [ -z "$TARGET" ]; then
-    echo "Uso: $0 <IP_O_RED>"
-    exit 1
-fi
+# 1. Escaneo de Red (Ping Sweep)
+# Analogía: Gritar "¿Hay alguien en casa?" desde la calle.
+# Solo queremos saber qué dispositivos están encendidos.
+# Comando: nmap -sn 192.168.1.0/24
+echo "[1] Buscando dispositivos encendidos en la red..."
 
-echo "--- Iniciando Escaneo de Seguridad para: $TARGET ---"
+# 2. Escaneo de Puertos Básicos
+# Analogía: Ir puerta por puerta intentando girar el pomo para ver si se abre.
+# Comando: nmap 192.168.1.1
+echo "[2] Revisando qué puertas (puertos) están abiertas en el objetivo..."
 
-# 1. Escaneo rápido de puertos comunes
-echo "[+] Escaneando los 1000 puertos más comunes..."
-nmap -sS -T4 $TARGET -oN scan_comun.txt
+# 3. Detección de Versiones (-sV)
+# Analogía: Si la puerta está abierta, miras hacia adentro para ver si es
+# una cocina, un baño o un garaje.
+# Comando: nmap -sV 192.168.1.1
+echo "[3] Identificando qué programas corren en esas puertas..."
 
-# 2. Detección de Versiones y OS
-echo "[+] Detectando versiones de servicios y Sistema Operativo..."
-nmap -sV -O $TARGET -oN scan_versiones.txt
+# 4. Escaneo Agresivo (-A)
+# Analogía: El detective saca la lupa, revisa las huellas, el tipo de madera
+# de la puerta y hasta el nombre en el buzón.
+# Comando: nmap -A 192.168.1.1
+echo "[4] Obteniendo información detallada (SO, scripts, rutas)..."
 
-# 3. Escaneo de vulnerabilidades básicas (Scripts de NSE)
-echo "[+] Ejecutando scripts de vulnerabilidades (NSE)..."
-nmap --script vuln $TARGET -oN scan_vulns.txt
-
-echo "--- Escaneo completado. Resultados guardados en archivos .txt ---"
+echo "-------------------------------------------------------"
+echo "CONSEJO DE SEGURIDAD: Nunca uses Nmap en redes que no te pertenecen."
+echo "¡Es como intentar entrar en casas ajenas, aunque no robes nada!"
+echo "-------------------------------------------------------"

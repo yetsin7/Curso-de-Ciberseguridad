@@ -1,11 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>XSS: EL CARTEL ENGAÑOSO</title>
+</head>
 <body>
-    <h1>Prueba de XSS</h1>
-    <!-- XSS Reflejado -->
-    <p>Bienvenido, <script>alert('XSS Reflejado!');</script></p>
+    <!-- 
+    ============================================================================
+    XSS (CROSS-SITE SCRIPTING): EXPLICADO FÁCIL
+    ============================================================================
     
-    <!-- XSS en Atributo -->
-    <img src="x" onerror="alert('XSS en atributo onerror')">
+    ANALOGÍA: Imagina que vas a un restaurante y hay una pizarra para que los 
+    clientes escriban sugerencias.
+    
+    Un cliente normal escribe: "¡La pizza estaba rica!".
+    Un hacker escribe: "¡La pizza gratis en la mesa 5!". (Y esto es código que 
+    el navegador ejecuta).
+    
+    Cuando el próximo cliente lee la pizarra, ¡se cree el mensaje del hacker!
+    
+    ---
+    -->
+
+    <h1>Demo de XSS (Educativo)</h1>
+    <p>Imagina que esto es una sección de comentarios de un blog.</p>
+
+    <div id="comentarios">
+        <!-- Comentario seguro -->
+        <div class="comentario">
+            <strong>Juan:</strong> ¡Me encanta este curso!
+        </div>
+
+        <!-- Comentario con XSS (Ataque) -->
+        <!-- 
+        Analogía: El hacker no escribe un saludo, escribe una ORDEN 
+        para el navegador del que lea el comentario.
+        -->
+        <div class="comentario">
+            <strong>Hacker:</strong> 
+            <script>
+                // Esto es lo que pasaría si la web no limpia lo que el usuario escribe.
+                // En lugar de un texto, el navegador ejecuta este código.
+                // alert('⚠️ ¡CUIDADO! He robado tus galletas (cookies) de sesión 🍪');
+            </script>
+            <span>(Aquí había un código oculto que se ejecutó automáticamente)</span>
+        </div>
+    </div>
+
+    <hr>
+    <h2>¿Cómo lo arregla el constructor?</h2>
+    <table border="1">
+        <tr>
+            <th>Error (Vulnerabilidad)</th>
+            <th>Solución (Seguridad)</th>
+            <th>Analogía</th>
+        </tr>
+        <tr>
+            <td>Dejar que el usuario escriba lo que sea.</td>
+            <td>Limpiar el texto (Sanitización).</td>
+            <td>Revisar que nadie escriba órdenes raras en la pizarra.</td>
+        </tr>
+        <tr>
+            <td>Confiar en el navegador.</td>
+            <td>Usar cabeceras de seguridad (CSP).</td>
+            <td>Poner un cristal delante de la pizarra para que nadie pueda escribir.</td>
+        </tr>
+    </table>
+
 </body>
 </html>

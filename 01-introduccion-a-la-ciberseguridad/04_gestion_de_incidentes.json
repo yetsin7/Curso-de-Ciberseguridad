@@ -1,41 +1,37 @@
 {
-  "incident_response_plan": {
-    "phases": [
-      {
-        "step": 1,
-        "name": "Preparación",
-        "description": "Establecer capacidades de respuesta, herramientas y formación del equipo (CSIRT)."
-      },
-      {
-        "step": 2,
-        "name": "Identificación",
-        "description": "Detección de eventos inusuales y confirmación de si constituyen un incidente de seguridad."
-      },
-      {
-        "step": 3,
-        "name": "Contención",
-        "description": "Limitar el alcance del daño. Puede ser contención a corto plazo (aislar red) o largo plazo (reinstalar)."
-      },
-      {
-        "step": 4,
-        "name": "Erradicación",
-        "description": "Eliminar la causa raíz del incidente (eliminar malware, cerrar brechas)."
-      },
-      {
-        "step": 5,
-        "name": "Recuperación",
-        "description": "Restaurar los sistemas a su estado normal de operación de forma segura."
-      },
-      {
-        "step": 6,
-        "name": "Lecciones Aprendidas",
-        "description": "Documentación del incidente, análisis de la respuesta y mejora de controles futuros."
-      }
-    ],
-    "severity_levels": {
-      "low": "Poco impacto, fácil de resolver.",
-      "medium": "Afecta a servicios no críticos.",
-      "high": "Compromiso de datos sensibles o caída de servicios críticos."
+  "titulo": "Plan de Respuesta ante Incidentes: ¿Qué hacer cuando todo sale mal?",
+  "descripcion": "Este archivo JSON está diseñado para ser leído por humanos y máquinas, explicando cómo reaccionar ante un ciberataque usando la analogía de un equipo de bomberos.",
+  "fases_del_incidente": [
+    {
+      "fase": "1. Preparación",
+      "analogia": "Entrenar a los bomberos y revisar que los camiones tengan agua antes de que haya un fuego.",
+      "detalle": "Tener copias de seguridad listas y un equipo de personas que sepan qué hacer."
+    },
+    {
+      "fase": "2. Identificación",
+      "analogia": "Sonar la alarma porque alguien vio humo.",
+      "detalle": "Detectar que algo raro está pasando en la red (ej. alguien intentando entrar muchas veces)."
+    },
+    {
+      "fase": "3. Contención",
+      "analogia": "Cerrar las puertas de la habitación que se quema para que el fuego no se extienda al resto de la casa.",
+      "detalle": "Desconectar la computadora infectada de internet para que el virus no salte a otras."
+    },
+    {
+      "fase": "4. Erradicación",
+      "analogia": "Apagar el fuego por completo y sacar los escombros quemados.",
+      "detalle": "Eliminar el virus o cerrar el agujero por donde entró el hacker."
+    },
+    {
+      "fase": "5. Recuperación",
+      "analogia": "Limpiar la casa, pintar las paredes y volver a mudarse.",
+      "detalle": "Restaurar los archivos desde las copias de seguridad y volver a encender los servicios."
+    },
+    {
+      "fase": "6. Lecciones Aprendidas",
+      "analogia": "Reunirse para hablar de por qué empezó el fuego y comprar mejores detectores de humo.",
+      "detalle": "Analizar qué falló para que no vuelva a pasar nunca más."
     }
-  }
+  ],
+  "mensaje_final": "En ciberseguridad no se trata de SI te van a atacar, sino de CUÁNDO. ¡Estar preparado es la mejor defensa!"
 }
