@@ -1,22 +1,9 @@
 # Módulo 02: Fundamentos de Redes y Protocolos
 
-Para proteger o atacar una red, primero debes entender cómo funciona. Este módulo es el pilar técnico del curso.
+Entender cómo viajan los datos es clave para la ciberseguridad.
 
-## Temario
-
-1.  **Modelo OSI y Modelo TCP/IP**: Las capas de comunicación.
-2.  **Protocolos de Red Críticos**:
-    - **TCP vs UDP**: Diferencias y usos.
-    - **IP (IPv4 e IPv6)**: Direccionamiento y subredes.
-    - **ICMP**: El protocolo de diagnóstico (Ping/Traceroute).
-3.  **Servicios Esenciales**:
-    - **DNS**: Cómo funciona la resolución de nombres.
-    - **HTTP/HTTPS**: El protocolo de la web.
-    - **DHCP**: Asignación dinámica de IPs.
-    - **SSH, FTP, SMTP/IMAP**.
-4.  **Dispositivos de Red**: Routers, Switches, Firewalls, IDS/IPS.
-5.  **Análisis de Tráfico**: Introducción a Wireshark y tcpdump.
-
-## Laboratorio Práctico
-- Instalación de Wireshark.
-- Captura de tráfico HTTP vs HTTPS (ver la diferencia en texto plano).
+#### Archivos:
+- `01_modelo_osi.txt`: Las 7 capas del modelo OSI.
+- `02_protocolos_comunes.txt`: Explicación de TCP, UDP, ICMP, DNS.
+- `03_analisis_wireshark.txt`: Guía básica de captura de tráfico.
+- `04_ejercicio_redes.txt`: Taller de direccionamiento IP.

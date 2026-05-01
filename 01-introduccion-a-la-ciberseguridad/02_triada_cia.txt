@@ -1,0 +1,3 @@
+Confidencialidad: Asegurar que solo las personas autorizadas vean los datos.
+Integridad: Garantizar que los datos no han sido modificados sin autorización.
+Disponibilidad: Asegurar que los sistemas y datos estén listos cuando se necesiten.

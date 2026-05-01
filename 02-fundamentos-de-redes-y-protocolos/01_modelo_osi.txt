@@ -1,0 +1,7 @@
+1. Capa Física
+2. Capa de Enlace de Datos
+3. Capa de Red
+4. Capa de Transporte
+5. Capa de Sesión
+6. Capa de Presentación
+7. Capa de Aplicación

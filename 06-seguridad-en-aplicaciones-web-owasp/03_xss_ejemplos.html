@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Prueba de XSS</h1>
+    <!-- XSS Reflejado -->
+    <p>Bienvenido, <script>alert('XSS Reflejado!');</script></p>
+    
+    <!-- XSS en Atributo -->
+    <img src="x" onerror="alert('XSS en atributo onerror')">
+</body>
+</html>

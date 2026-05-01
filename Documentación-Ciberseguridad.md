@@ -1,39 +1,57 @@
-# Documentación de Referencia - Ciberseguridad
+# Documentación de Ciberseguridad
 
-Este curso se apoya en estándares internacionales y documentación técnica oficial para garantizar que el aprendizaje sea profesional y actualizado.
+La ciberseguridad es la práctica de proteger sistemas, redes y programas de ataques digitales. Estos ciberataques suelen tener como objetivo acceder, modificar o destruir información confidencial; extorsionar a los usuarios o interrumpir los procesos de negocio normales.
 
-## Marcos de Trabajo y Estándares
+## Documentacion recomendada
 
-- **[OWASP Top 10](https://owasp.org/www-project-top-ten/)**: Referencia estándar para la seguridad de aplicaciones web.
-- **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)**: Guías para gestionar el riesgo de ciberseguridad.
-- **[MITRE ATT&CK](https://attack.mitre.org/)**: Base de conocimientos de tácticas y técnicas de adversarios.
-- **[ISO/IEC 27001](https://www.iso.org/iso-iec-27001-information-security.html)**: Estándar internacional para sistemas de gestión de seguridad de la información.
+- [OWASP (Open Web Application Security Project)](https://owasp.org/)
+  La fuente principal para la seguridad de aplicaciones web.
+- [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
+  Estándares y mejores prácticas para la gestión de riesgos de seguridad.
+- [MITRE ATT&CK](https://attack.mitre.org/)
+  Base de conocimientos global de tácticas y técnicas de adversarios.
 
-## Herramientas de Referencia
+## Temas principales que debes estudiar
 
-- **[Kali Linux Documentation](https://www.kali.org/docs/)**: Documentación oficial de la distribución más usada en seguridad.
-- **[Metasploit Documentation](https://docs.metasploit.com/)**: Guía del framework de explotación líder.
-- **[Nmap Reference Guide](https://nmap.org/book/man.html)**: El manual definitivo para el escaneo de redes.
-- **[Wireshark User's Guide](https://www.wireshark.org/docs/wsug_html_chunked/)**: Para análisis profundo de tráfico de red.
+1. Tríada CIA:
+   Confidencialidad, Integridad y Disponibilidad.
+2. Redes y Protocolos:
+   TCP/IP, DNS, HTTP/S, SSH, y cómo se comunican los sistemas.
+3. Linux y Terminal:
+   Dominar la línea de comandos es esencial para usar herramientas de seguridad.
+4. Hacking Ético:
+   Metodologías de ataque para fortalecer las defensas.
+5. Criptografía:
+   Fundamentos de cifrado, hashing y firmas digitales.
+6. Seguridad Web:
+   Identificación de vulnerabilidades como SQLi, XSS y CSRF.
+7. Análisis de Malware:
+   Entender cómo funcionan los virus y ransomware en entornos controlados.
+8. Informática Forense:
+   Recolección y análisis de evidencias tras un incidente.
 
-## Recursos de Aprendizaje Continuo
+## Orden recomendado
 
-- **[TryHackMe](https://tryhackme.com/)**: Plataforma gamificada para aprender ciberseguridad.
-- **[Hack The Box](https://www.hackthebox.com/)**: Laboratorios avanzados para practicar habilidades de penetración.
-- **[Cybrary](https://www.cybrary.it/)**: Cursos gratuitos y pagados sobre diversos temas de seguridad.
-- **[Krebs on Security](https://krebsonsecurity.com/)**: Blog de referencia sobre noticias de ciberseguridad.
+1. [Fundamentos de Ciberseguridad](https://www.cybrary.it/course/introduction-to-it-and-cybersecurity)
+   Entiende los conceptos base y la ética profesional.
+2. [Redes de Computadoras](https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccna.html)
+   Imposible proteger lo que no entiendes cómo se conecta.
+3. [Linux para Seguridad](https://www.kali.org/docs/)
+   Familiarízate con Kali Linux y sus herramientas.
+4. [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+   Aprende las vulnerabilidades web más críticas.
+5. [Hacking Ético Práctico](https://tryhackme.com/)
+   Practica en laboratorios controlados y seguros.
 
-## Certificaciones Recomendadas
+## Ejemplo basico (Escaneo de red con Nmap)
 
-1. **CompTIA Security+**: Base sólida para principiantes.
-2. **eJPT (eLearnSecurity Junior Penetration Tester)**: Certificación práctica excelente para empezar en Pentesting.
-3. **OSCP (Offensive Security Certified Professional)**: El "estándar de oro" del pentesting práctico.
-4. **CISSP (Certified Information Systems Security Professional)**: Para niveles de gestión y expertos senior.
+```bash
+# Escaneo de puertos comunes y detección de servicios
+nmap -sV 192.168.1.1
 
-## Glosario Técnico Clave
+# Escaneo rápido de toda la red local
+nmap -sn 192.168.1.0/24
 
-- **Exploit**: Fragmento de software que aprovecha una vulnerabilidad.
-- **Payload**: El código que se ejecuta tras una explotación exitosa.
-- **Zero-Day**: Vulnerabilidad desconocida para el fabricante.
-- **Social Engineering**: Manipulación psicológica para obtener información.
-- **Phishing**: Suplantación de identidad por correo o medios digitales.
+# Escaneo agresivo con detección de OS y scripts por defecto
+nmap -A target_ip
+```
