@@ -1,9 +1,10 @@
-# Módulo 06: Seguridad Web (OWASP Top 10)
+# Módulo 06: Seguridad en Aplicaciones Web (OWASP Top 10)
 
-Vulnerabilidades más comunes en aplicaciones web.
+Auditoría y protección de entornos web modernos.
 
 #### Archivos:
-- `01_owasp_top_10.txt`: Resumen de la lista actual de OWASP.
-- `02_sql_injection_base.txt`: Concepto y ejemplo de inyección SQL.
-- `03_xss_ejemplos.html`: Archivo HTML con ejemplos de Cross-Site Scripting.
-- `04_prevencion.txt`: Mejores prácticas para desarrolladores.
+- `01_owasp_top_10.md`: Análisis profundo de los riesgos actuales.
+- `02_sqli_lab.php`: Laboratorio vulnerable para pruebas de SQL Injection.
+- `03_xss_payloads.txt`: Diccionario de payloads comunes para XSS.
+- `04_burpsuite_guide.md`: Manual de uso de Burp Suite para intercepción.
+- `05_cors_policy.json`: Ejemplo de configuración segura de CORS.

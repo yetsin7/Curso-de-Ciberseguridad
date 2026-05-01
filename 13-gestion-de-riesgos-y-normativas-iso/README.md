@@ -1,17 +1,10 @@
 # Módulo 13: Gestión de Riesgos y Normativas (ISO/NIST)
 
-La ciberseguridad no es solo técnica. Aprenderás el lado administrativo, legal y de cumplimiento que rige a las empresas.
+Cumplimiento, leyes y marcos de trabajo de seguridad.
 
-## Temario
-
-1.  **Evaluación de Riesgos**: Activos, Amenazas, Vulnerabilidades e Impacto.
-2.  **Normativas Internacionales**:
-    - **ISO/IEC 27001**: Sistemas de Gestión de Seguridad de la Información (SGSI).
-    - **NIST Cybersecurity Framework**: Identificar, Proteger, Detectar, Responder y Recuperar.
-3.  **Privacidad y Leyes**: GDPR (Europa), leyes locales de protección de datos.
-4.  **Políticas de Seguridad**: Creación de manuales, procedimientos y estándares corporativos.
-5.  **Auditoría y Cumplimiento**: Cómo prepararse para una auditoría externa.
-
-## Laboratorio Práctico
-- Realización de un análisis de riesgos básico para una PyME ficticia.
-- Redacción de una política de uso aceptable de activos tecnológicos.
+#### Archivos:
+- `01_iso_27001_controls.md`: Resumen de los controles del Anexo A.
+- `02_nist_csf_guide.md`: Los 5 pilares del framework de NIST.
+- `03_risk_matrix.json`: Ejemplo de matriz de probabilidad e impacto.
+- `04_legal_compliance.txt`: Leyes de protección de datos (GDPR, leyes locales).
+- `05_it_audit_checklist.txt`: Lista de verificación para auditorías internas.

@@ -1,0 +1,39 @@
+{
+  "firewall_rules": {
+    "default_policy": {
+      "incoming": "DROP",
+      "outgoing": "ALLOW",
+      "forwarding": "DROP"
+    },
+    "allowed_services": [
+      {
+        "service": "SSH",
+        "port": 22,
+        "protocol": "TCP",
+        "source": "192.168.1.0/24",
+        "action": "ACCEPT",
+        "description": "Permitir SSH solo desde la red interna de administración"
+      },
+      {
+        "service": "HTTPS",
+        "port": 443,
+        "protocol": "TCP",
+        "source": "ANY",
+        "action": "ACCEPT",
+        "description": "Permitir tráfico web seguro desde cualquier origen"
+      },
+      {
+        "service": "DNS",
+        "port": 53,
+        "protocol": "UDP",
+        "source": "ANY",
+        "action": "ACCEPT",
+        "description": "Permitir consultas DNS"
+      }
+    ],
+    "blocked_ips": [
+      "10.0.0.50",
+      "192.168.1.200"
+    ]
+  }
+}

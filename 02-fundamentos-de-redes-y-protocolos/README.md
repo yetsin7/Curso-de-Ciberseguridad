@@ -1,9 +1,11 @@
-# Módulo 02: Fundamentos de Redes y Protocolos
+# Módulo 02 — Fundamentos de Redes y Protocolos
 
-Entender cómo viajan los datos es clave para la ciberseguridad.
+Comprender la comunicación de datos, el modelo OSI y las herramientas de análisis de red.
 
-#### Archivos:
-- `01_modelo_osi.txt`: Las 7 capas del modelo OSI.
-- `02_protocolos_comunes.txt`: Explicación de TCP, UDP, ICMP, DNS.
-- `03_analisis_wireshark.txt`: Guía básica de captura de tráfico.
-- `04_ejercicio_redes.txt`: Taller de direccionamiento IP.
+## Archivos del módulo
+
+- `01_modelo_osi.txt`: Resumen de las capas del modelo OSI y sus funciones.
+- `02_protocolos_tcp_udp.md`: Comparativa técnica entre TCP y UDP.
+- `03_escaneo_nmap.sh`: Script de automatización para descubrimiento de red.
+- `04_analisis_trafico.py`: Implementación básica de captura de paquetes.
+- `05_configuracion_firewall.json`: Ejemplo de reglas de filtrado para un firewall.

@@ -1,22 +1,10 @@
 # Módulo 08: Seguridad en Redes Inalámbricas
 
-El aire es el medio. Aprenderás cómo funcionan los ataques a redes WiFi y cómo protegerlas adecuadamente.
+Ataques y defensa en el espectro radioeléctrico.
 
-## Temario
-
-1.  **Fundamentos de WiFi**: Estándares 802.11, canales y frecuencias.
-2.  **Protocolos de Seguridad Inalámbrica**:
-    - **WEP**: Por qué nunca usarlo.
-    - **WPA / WPA2 (PSK)**: El ataque de "Handshake".
-    - **WPA3**: Mejoras y nuevas debilidades.
-    - **Enterprise (802.1x)**: Seguridad corporativa.
-3.  **Modo Monitor e Inyección de Paquetes**: Configuración de hardware.
-4.  **Ataques Comunes**:
-    - Cracking de WPA2 con diccionarios.
-    - Ataques WPS (Pixie Dust).
-    - Rogue Access Points (Evil Twin).
-5.  **Defensa**: Filtrado MAC (insuficiente), ocultación de SSID, uso de VPN.
-
-## Laboratorio Práctico
-- Captura de un WPA Handshake usando la suite `aircrack-ng`.
-- Simulación de un Evil Twin en un entorno controlado.
+#### Archivos:
+- `01_wifi_protocols.txt`: Diferencias técnicas entre WEP, WPA2 y WPA3.
+- `02_aircrack_workflow.sh`: Script guía para cracking de WPA2/Handshake.
+- `03_evil_twin_concept.md`: Teoría sobre ataques de gemelo malvado.
+- `04_wardriving_basics.txt`: Introducción al mapeo de redes inalámbricas.
+- `05_hardening_wifi.md`: Mejores prácticas para asegurar routers domésticos y APs.

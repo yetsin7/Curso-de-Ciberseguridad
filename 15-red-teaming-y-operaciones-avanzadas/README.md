@@ -1,16 +1,10 @@
 # Módulo 15: Red Teaming y Operaciones Avanzadas
 
-Llevando el pentesting al siguiente nivel. Simulación de ataques persistentes y evasión de defensas modernas.
+Simulación de adversarios y operaciones de ataque persistente.
 
-## Temario
-
-1.  **Pentesting vs Red Teaming**: Diferencias en objetivos y metodología.
-2.  **Simulación de Adversarios**: Uso de frameworks como MITRE ATT&CK.
-3.  **Evasión de Antivirus y EDR**: Técnicas de ofuscación de código y evasión de firmas.
-4.  **Movimiento Lateral y Pivotaje**: Cómo saltar de una máquina a otra dentro de una red interna.
-5.  **Persistencia Avanzada**: Mantener acceso a pesar de reinicios o limpiezas básicas.
-6.  **Ingeniería Social Dirigida**: Spear Phishing y ataques físicos controlados.
-
-## Laboratorio Práctico
-- Configuración de un servidor C2 (Command & Control) como `Sliver` o `Covenant`.
-- Simulación de una cadena de ataque completa en un entorno de Active Directory.
+#### Archivos:
+- `01_red_team_methodology.md`: Planificación de campañas y TTPs.
+- `02_c2_frameworks_guide.txt`: Comparativa entre Sliver, Havoc y Cobalt Strike.
+- `03_av_evasion_techniques.md`: Teoría de ofuscación y syscalls.
+- `04_lateral_movement.sh`: Script de ejemplo para enumeración de red interna.
+- `05_persistence_mechanisms.md`: Cómo se mantiene el acceso en Windows y Linux.
