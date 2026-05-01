@@ -1,0 +1,35 @@
+# Binarios y archivos de compilación
+*.exe
+*.out
+*.o
+*.obj
+*.bin
+
+# Entornos virtuales y dependencias
+venv/
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+
+# Archivos de configuración local
+.env
+.claude/
+.vscode/
+.idea/
+
+# Archivos temporales y logs
+*.log
+tmp/
+temp/
+*.pcap
+*.cap
+*.txt_report
+
+# Bases de datos locales
+*.db
+*.sqlite
+
+# OS metadata
+.DS_Store
+Thumbs.db
